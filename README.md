@@ -5,14 +5,14 @@ Vue2 / Vue3 可用的 vue latex 公式展示插件，是 katex 的简单封装
 
 # 如何安装？
 
-安装 `vue-katex` 和 `katex`
+安装 `vatex` 和 `katex`
 
 ```shell
 # With NPM
-npm i vue-katex katex
+npm i vatex katex
 
 # With Yarn
-yarn add vue-katex katex
+yarn add vatex katex
 ```
 
 Vue2 用户需要额外安装 composition-api
