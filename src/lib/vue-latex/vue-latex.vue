@@ -1,0 +1,73 @@
+<script lang="ts">
+import { computed, defineComponent, h } from 'vue-demi'
+import 'katex/dist/katex.min.css'
+import katex from 'katex'
+
+export default defineComponent({
+  name: 'VueLatex',
+  props: {
+    fontsize: {
+      type: Number,
+      default: 16
+    },
+    expression: {
+      type: String,
+      required: true
+    },
+    displayMode: {
+      type: Boolean,
+      default: false
+    },
+    throwOnError: {
+      type: Boolean,
+      default: false
+    },
+    errorColor: {
+      type: String,
+      default: undefined
+    },
+    minRuleThickness: {
+      type: number,
+      default: 0.04
+    },
+    macros: {
+      type: Object,
+      default: undefined
+    },
+    colorIsTextColor: {
+      type: Boolean,
+      default: undefined
+    },
+    maxSize: {
+      type: Number,
+      default: undefined
+    },
+    maxExpand: {
+      type: Number,
+      default: undefined
+    },
+    allowedProtocols: {
+      type: Array,
+      default: undefined
+    },
+    strict: {
+      type: [Boolean, String, Function],
+      default: undefined
+    }
+  },
+  setup (props) {
+    let html = computed(() => katex.renderToString(props.expression, props))
+    return {
+      html
+    }
+  },
+  render () {
+    return h(this.displayMode ? 'div' : 'span', {
+      innerHTML: this.html,
+      style: {
+        'font-size': `${this.fontsize}px`
+      }
+    })
+  }
+})
+</script>
