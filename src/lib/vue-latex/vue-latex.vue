@@ -27,7 +27,7 @@ export default defineComponent({
       default: undefined
     },
     minRuleThickness: {
-      type: number,
+      type: Number,
       default: 0.04
     },
     macros: {
