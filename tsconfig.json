@@ -31,7 +31,6 @@
   "include": [
     "src/lib/**/*.ts",
     "src/lib/**/*.tsx",
-    "src/lib/**/*.vue",
     "src/types/**/*.ts"
   ],
   "exclude": [

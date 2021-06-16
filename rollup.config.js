@@ -1,5 +1,4 @@
 import typescript from 'rollup-plugin-typescript2'
-import vue from 'rollup-plugin-vue'
 import { terser } from 'rollup-plugin-terser'
 
 const tsconfigOverride = {
@@ -9,7 +8,7 @@ const tsconfigOverride = {
 
 export default [{
   input: 'src/lib/index.ts',
-  plugins: [typescript({ tsconfigOverride }), vue(), terser()],
+  plugins: [typescript({ tsconfigOverride }), terser()],
   external: [
     'vue',
     'katex',

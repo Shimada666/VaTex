@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue-demi'
-import VueLatex from './lib/vue-latex/vue-latex.vue'
+import VueLatex from './lib/vue-latex/vue-latex.ts'
 
 export default defineComponent({
   name: 'App',

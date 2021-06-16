@@ -1,5 +1,5 @@
-<script lang="ts">
-import { computed, defineComponent, h } from 'vue-demi'
+import { computed, defineComponent } from 'vue-demi'
+import h from '../utils/h-demi'
 import 'katex/dist/katex.min.css'
 import katex from 'katex'
 
@@ -63,11 +63,12 @@ export default defineComponent({
   },
   render () {
     return h(this.displayMode ? 'div' : 'span', {
-      innerHTML: this.html,
+      domProps: {
+        innerHTML: this.html
+      },
       style: {
         'font-size': `${this.fontsize}px`
       }
     })
   }
 })
-</script>
