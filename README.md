@@ -1,11 +1,14 @@
 # VaTex
 
-Vue2 / Vue3 可用的 vue latex 公式展示插件，是 katex 的简单封装  
-同时也是 [vue-katex](https://github.com/lucpotage/vue-katex) 的 vue3 版本， 参考了大幅代码，在这里表示感谢
+The vue latex formula display plugin, available for Vue2 / Vue3.  
+Simply encapsulate katex.  
+It is also the vue3 version of [vue-katex](https://github.com/lucpotage/vue-katex), refer to a lot of code, thanks here.
 
-# 如何安装？
+> [🇨🇳 中文文档](./README-zh.md)
 
-安装 `vatex` 和 `katex`
+# Installation
+
+Install vue-katex with katex as a peer dependency
 
 ```shell
 # With NPM
@@ -15,17 +18,17 @@ npm i vatex katex
 yarn add vatex katex
 ```
 
-Vue2 用户需要额外安装 composition-api
+Vue2 developers need install composition-api
 
 ```shell
 yarn add @vue/composition-api
 ```
 
-# 开始使用
+# Getting started
 
 ### `Vue3`
 
-#### 注册为全局组件
+#### Register globally
 
 ```ts
 import {createApp} from 'vue'
@@ -36,16 +39,16 @@ app
   .mount('#app')
 ```
 
-然后
+Then
 
 ```vue
 
 <vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode/>
 ```
 
-#### 单独引入
+#### Register locally
 
-在 vue 文件中
+in vue file
 
 ```vue
 
@@ -67,7 +70,7 @@ export default defineComponent({
 
 ### `Vue2`
 
-#### 注册为全局组件
+#### Register globally
 
 ```ts
 import Vue from 'vue';
@@ -75,30 +78,45 @@ import Vue from 'vue';
 Vue.use(VueKatex);
 ```
 
-#### 单独引入
+#### Register locally
 
-todo... 我相信你会
+```vue
 
-# 参数说明
+<template>
+  <vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode/>
+</template>
+<script>
+import {VueLatex} from 'vatex'
 
-| 参数      | 说明    | 类型      | 可选值       | 默认值   |
+export default {
+  name: 'App',
+  components: {
+    VueLatex
+  }
+}
+</script>
+```
+
+# Arguments
+
+| Argument      | Description    | Type      | Optional       | 默认值   |
 |---------- |-------- |---------- |-------------  |-------- |
-| fontsize| 字体大小(px)，可以控制 LaTex 表达式的大小| number  |   —    |    16     |
-| expression| LaTex表达式| string  |   —    |    —     |
-| displayMode| 显示模式, true 时使用 div 承载且水平居中，false 时使用 span 内联 | boolean  |   —    |    false     |
-| throwOnError| 错误时抛异常，true 时表达式错误会抛异常，false 时会使用红色显示错误的 LaTex 表达式，调整颜色可以传入 errorColor | boolean  |   -   |    false     |
-| errorColor | 错误的颜色 | string | - | - |
-| minRuleThickness | 线(如分数线)、边框等线条大小(em) | number | - | 0.04 |
+| fontsize| font size(px)，it can control the LaTex expression size| number  |   —    |    16     |
+| expression| LaTex expression| string  |   —    |    —     |
+| displayMode| Display mode. When true, use `div` to render and center the element. When false, use `span` | boolean  |   —    |    false     |
+| throwOnError| If true , KaTeX will throw a ParseError when it encounters an unsupported command or invalid LaTeX. If false, KaTeX will render unsupported commands as text, and render invalid LaTeX as its source code with hover text giving the error, in the color given by errorColor. | boolean  |   -   |    false     |
+| errorColor | A color string given in the format "#XXX" or "#XXXXXX". This option determines the color that unsupported commands and invalid LaTeX are rendered in when throwOnError is set to false. (default: #cc0000) | string | - | #cc0000 |
+| minRuleThickness | Specifies a minimum thickness, in ems, for fraction lines, \sqrt top lines, {array} vertical lines, \hline, \hdashline, \underline, \overline, and the borders of \fbox, \boxed, and \fcolorbox. The usual value for these items is 0.04(em), so for minRuleThickness to be effective it should probably take a value slightly above 0.04(em), say 0.05(em) or 0.06(em). Negative values will be ignored. | number | - | 0.04 |
+| macros | A collection of custom macros. Each macro is a property with a name like \name (written "\\name" in JavaScript) which maps to a string that describes the expansion of the macro, or a function that accepts an instance of MacroExpander as first argument and returns the expansion as a string. | object | - | null |
+| strict |  If false or "ignore", allow features that make writing LaTeX convenient but are not actually supported by (Xe)LaTeX (similar to MathJax). If true or "error" (LaTeX faithfulness mode), throw an error for any such transgressions. If "warn" (the default), warn about such behavior via console.warn. Provide a custom function handler(errorCode, errorMsg, token) to customize behavior depending on the type of transgression (summarized by the string code errorCode and detailed in errorMsg); this function can also return "ignore", "error", or "warn" to use a built-in behavior.  | \[boolean,string,function\] | - | warn |
 
-# 与 vue-katex 的不同
+[More options](https://katex.org/docs/options.html)
 
-* 支持 `vue3`
-* 支持调整表达式大小(fontsize)，线条粗细(minRuleThickness) 等
-* 更方便使用
+# Difference from [vue-katex](https://github.com/lucpotage/vue-katex)
 
-# TODO
-
-在线调试
+* Support `vue3`
+* Support adjust expression size(fontsize)，line thickness(minRuleThickness), etc.
+* Use easily
 
 # LICENCE
 

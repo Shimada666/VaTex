@@ -10,13 +10,7 @@ export default defineConfig({
       '@': resolve(__dirname, './src')
     }
   },
-  server: {
-    // 自定义代理规则
-    proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
-        changeOrigin: true
-      }
-    }
+  build: {
+    outDir: 'pages'
   }
 })

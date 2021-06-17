@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "npx rimraf dist && rollup --config rollup.config.js",
     "serve": "vite preview",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "gh-pages": "vite build --base=/VaTex/ && gh-pages -d ./pages"
   },
   "main": "dist/vatex.cjs.js",
   "module": "dist/vatex.esm.js",
@@ -32,8 +33,8 @@
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.11",
-    "vue": "^2.6.12 || ^3.1.1",
-    "katex": "^0.13.11"
+    "katex": "^0.13.11",
+    "vue": "^2.6.12 || ^3.1.1"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {
@@ -71,6 +72,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-vue": "^7.8.0",
+    "gh-pages": "^3.2.1",
     "katex": "^0.13.11",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
