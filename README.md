@@ -1,6 +1,6 @@
 # VaTex
 
-[![NPM version](https://img.shields.io/npm/v/vatex.svg?style=flat)](https://www.npmjs.com/package/vue-katex) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![NPM version](https://img.shields.io/npm/v/vatex.svg?style=flat)](https://www.npmjs.com/package/vatex) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 The vue latex formula display plugin, available for Vue2 / Vue3.  
 Simply encapsulate katex.  
