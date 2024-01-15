@@ -1,4 +1,4 @@
-import { App } from 'vue-demi'
+import type { App } from 'vue-demi'
 import VueLatex from './vue-latex'
 
 VueLatex.install = (app: App) => {

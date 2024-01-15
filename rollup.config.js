@@ -3,7 +3,7 @@ import { terser } from 'rollup-plugin-terser'
 
 const tsconfigOverride = {
   compilerOptions: { declaration: true }, // 生成.d.ts的文件
-  exclude: ['tests/**/*.ts', 'tests/**/*.tsx']
+  exclude: ['tests/**/*.ts', 'tests/**/*.tsx'],
 }
 
 export default [{
@@ -12,18 +12,18 @@ export default [{
   external: [
     'vue',
     'katex',
-    'vue-demi'
+    'vue-demi',
   ],
   output: [
     {
       name: 'VueLatex',
       file: 'dist/vatex.cjs.js',
-      format: 'cjs'
+      format: 'cjs',
     },
     {
       name: 'VueLatex',
       file: 'dist/vatex.esm.js',
-      format: 'esm'
+      format: 'esm',
     },
     {
       name: 'VueLatex',
@@ -32,9 +32,9 @@ export default [{
       globals: {
         'katex': 'katex',
         'vue': 'vue',
-        'vue-demi': 'VueDemi'
+        'vue-demi': 'VueDemi',
       },
-      exports: 'named'
-    }
-  ]
+      exports: 'named',
+    },
+  ],
 }]

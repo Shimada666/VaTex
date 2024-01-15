@@ -28,7 +28,7 @@ yarn add @vue/composition-api
 #### 注册为全局组件
 
 ```ts
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 import VueLatex from 'vatex'
 
 app
@@ -39,8 +39,7 @@ app
 然后
 
 ```vue
-
-<vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode/>
+<vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode />
 ```
 
 #### 单独引入
@@ -48,13 +47,9 @@ app
 在 vue 文件中
 
 ```vue
-
-<template>
-  <vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode/>
-</template>
 <script lang="ts">
-import {defineComponent} from 'vue'
-import {VueLatex} from 'vatex'
+import { defineComponent } from 'vue'
+import { VueLatex } from 'vatex'
 
 export default defineComponent({
   components: {
@@ -63,6 +58,9 @@ export default defineComponent({
 })
 </script>
 
+<template>
+  <VueLatex expression="\frac{a_i}{1+x}" display-mode />
+</template>
 ```
 
 ### `Vue2`
@@ -70,20 +68,16 @@ export default defineComponent({
 #### 注册为全局组件
 
 ```ts
-import Vue from 'vue';
+import Vue from 'vue'
 
-Vue.use(VueKatex);
+Vue.use(VueKatex)
 ```
 
 #### 单独引入
 
 ```vue
-
-<template>
-  <vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode/>
-</template>
 <script>
-import {VueLatex} from 'vatex'
+import { VueLatex } from 'vatex'
 
 export default {
   name: 'App',
@@ -92,6 +86,10 @@ export default {
   }
 }
 </script>
+
+<template>
+  <VueLatex expression="\frac{a_i}{1+x}" display-mode />
+</template>
 ```
 
 # 参数说明
