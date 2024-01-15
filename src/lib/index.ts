@@ -1,13 +1,13 @@
+import type { App } from 'vue-demi'
 import VueLatex from './vue-latex'
-import { App } from 'vue-demi'
 
-const install = (app: App) => {
+function install(app: App) {
   app.component(VueLatex.name, VueLatex)
 }
 
 export {
   install,
-  VueLatex
+  VueLatex,
 }
 
 export default { install }

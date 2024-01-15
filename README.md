@@ -33,7 +33,7 @@ yarn add @vue/composition-api
 #### Register globally
 
 ```ts
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 import VueLatex from 'vatex'
 
 app
@@ -44,8 +44,7 @@ app
 Then
 
 ```vue
-
-<vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode/>
+<vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode />
 ```
 
 #### Register locally
@@ -53,13 +52,9 @@ Then
 in vue file
 
 ```vue
-
-<template>
-  <vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode/>
-</template>
 <script lang="ts">
-import {defineComponent} from 'vue'
-import {VueLatex} from 'vatex'
+import { defineComponent } from 'vue'
+import { VueLatex } from 'vatex'
 
 export default defineComponent({
   components: {
@@ -68,6 +63,9 @@ export default defineComponent({
 })
 </script>
 
+<template>
+  <VueLatex expression="\frac{a_i}{1+x}" display-mode />
+</template>
 ```
 
 ### `Vue2`
@@ -75,20 +73,16 @@ export default defineComponent({
 #### Register globally
 
 ```ts
-import Vue from 'vue';
+import Vue from 'vue'
 
-Vue.use(VueKatex);
+Vue.use(VueKatex)
 ```
 
 #### Register locally
 
 ```vue
-
-<template>
-  <vue-latex :expression="'\\frac{a_i}{1+x}'" display-mode/>
-</template>
 <script>
-import {VueLatex} from 'vatex'
+import { VueLatex } from 'vatex'
 
 export default {
   name: 'App',
@@ -97,6 +91,10 @@ export default {
   }
 }
 </script>
+
+<template>
+  <VueLatex expression="\frac{a_i}{1+x}" display-mode />
+</template>
 ```
 
 # Arguments
